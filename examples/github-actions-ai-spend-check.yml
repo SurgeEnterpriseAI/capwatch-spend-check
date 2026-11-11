@@ -1,0 +1,22 @@
+# Example: check AI API spend every morning and fail the run when the month will go over budget.
+# Copy to .github/workflows/ in your own repository and add the keys as repository secrets.
+name: AI spend check
+on:
+  schedule:
+    - cron: "30 3 * * *"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  spend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Check spend against a $500 monthly budget
+        env:
+          ANTHROPIC_ADMIN_KEY: ${{ secrets.ANTHROPIC_ADMIN_KEY }}
+          OPENAI_ADMIN_KEY: ${{ secrets.OPENAI_ADMIN_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+        run: npx -y github:SurgeEnterpriseAI/capwatch-spend-check --budget 500

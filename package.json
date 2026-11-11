@@ -1,0 +1,16 @@
+{
+  "name": "capwatch-spend-check",
+  "version": "0.1.0",
+  "description": "Check AI API spend and rate limits across Anthropic, OpenAI and OpenRouter with read-only admin keys: month to date, forecast and a budget check. Open-source companion to Capwatch.",
+  "type": "module",
+  "bin": { "capwatch-spend-check": "spend-check.mjs" },
+  "files": ["spend-check.mjs", "docs", "README.md", "LICENSE"],
+  "scripts": { "test": "node test.mjs" },
+  "engines": { "node": ">=18" },
+  "keywords": ["ai-spend", "llm-cost", "anthropic", "openai", "openrouter", "rate-limits", "budget-alerts", "kill-switch", "finops", "admin-api"],
+  "homepage": "https://capwatch.surgesoftware.co.in",
+  "repository": { "type": "git", "url": "git+https://github.com/SurgeEnterpriseAI/capwatch-spend-check.git" },
+  "bugs": { "url": "https://github.com/SurgeEnterpriseAI/capwatch-spend-check/issues" },
+  "license": "MIT",
+  "author": "Surge Software Solutions Pvt Ltd"
+}
